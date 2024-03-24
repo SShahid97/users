@@ -1,0 +1,27 @@
+{
+    "DASHBOARD":{
+      "TOTAL_MALES_TEXT":"Total de Homens",
+      "TOTAL_FEMALES_TEXT": "Total de Mulheres",
+      "TOTAL_BROWN_EYED":"Total de Olhos Castanhos",
+      "TOTAL_BLACK_EYED":"Total de Olhos Pretos",
+      "APP_NAME":"Aplicativo de Perfis de Usuário",
+      "USER_PROFILES_TEXT":"Perfis de Usuário",
+      "FAVORITE_USERS": "Usuários Favoritos",
+      "DASHBOARD":"Painel",
+      "SEARCH_PLACEHOLDER": "Buscar usuários por nome",
+      "ADD_TO_FAVORITES_TEXT":"Adicionar aos favoritos",
+      "REMOVE_FROM_FAVORITES_TEXT":"Remover dos favoritos",
+      "VIEW_DETAILS_TEXT":"Ver Detalhes",
+      "ADDED_TO_FAVORITES_SUCCESS_TEXT":"Adicionado aos favoritos com sucesso",
+      "ADDED_TO_FAVORITES_FAILURE_TEXT":"Falha ao adicionar aos favoritos",
+      "REMOVED_FAVORITES_SUCCESS_TEXT":"Removido dos favoritos com sucesso",
+      "REMOVED_FAVORITES_FAILURE_TEXT":"Falha ao remover dos favoritos",
+      "ERROR_WHILE_FETCHING_TEXT":"Erro ao buscar dados",
+      "ITEMS_PER_PAGE_TEXT":"Itens por página",
+      "CONTACT_US": "Contate-nos",
+      "NAME": "Nome",
+      "EMAIL":"E-mail",
+      "YOUR_MESSAGE":"Sua Mensagem",
+      "SUBMIT": "Enviar"
+    }
+  }

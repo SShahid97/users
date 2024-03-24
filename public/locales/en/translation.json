@@ -1,0 +1,27 @@
+{
+  "DASHBOARD":{
+    "TOTAL_MALES_TEXT":"Total Males",
+    "TOTAL_FEMALES_TEXT": "Total Females",
+    "TOTAL_BROWN_EYED":"Total Brown Eyed",
+    "TOTAL_BLACK_EYED":"Total Black Eyed",
+    "APP_NAME":"User Profiles App",
+    "USER_PROFILES_TEXT":"User Profiles",
+    "FAVORITE_USERS": "Favorite Users",
+    "DASHBOARD":"Dashboard",
+    "SEARCH_PLACEHOLDER": "Search users by name",
+    "ADD_TO_FAVORITES_TEXT":"Add to favorites",
+    "REMOVE_FROM_FAVORITES_TEXT":"Remove from favorites",
+    "VIEW_DETAILS_TEXT":"View Details",
+    "ADDED_TO_FAVORITES_SUCCESS_TEXT":"Added to favorites successfully",
+    "ADDED_TO_FAVORITES_FAILURE_TEXT":"Failed to add to favorites",
+    "REMOVED_FAVORITES_SUCCESS_TEXT":"Removed from favorites successfully",
+    "REMOVED_FAVORITES_FAILURE_TEXT":"Failed to remove from favorites",
+    "ERROR_WHILE_FETCHING_TEXT":"Error while fetching data",
+    "ITEMS_PER_PAGE_TEXT":"Items per page",
+    "CONTACT_US":"Contact Us",
+    "NAME": "Name",
+    "EMAIL":"Email",
+    "YOUR_MESSAGE":"Your Message",
+    "SUBMIT":"Submit"
+  }
+}

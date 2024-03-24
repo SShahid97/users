@@ -1,0 +1,28 @@
+{
+    "DASHBOARD":{
+      "TOTAL_MALES_TEXT":"男性合計",
+      "TOTAL_FEMALES_TEXT": "女性合計",
+      "TOTAL_BROWN_EYED":"茶色の目の合計",
+      "TOTAL_BLACK_EYED":"黒い目の合計",
+      "APP_NAME":"ユーザープロファイルアプリ",
+      "USER_PROFILES_TEXT":"ユーザープロファイル",
+      "FAVORITE_USERS": "お気に入りのユーザー",
+      "DASHBOARD":"ダッシュボード",
+      "SEARCH_PLACEHOLDER": "名前でユーザーを検索",
+      "ADD_TO_FAVORITES_TEXT":"お気に入りに追加",
+      "REMOVE_FROM_FAVORITES_TEXT":"お気に入りから削除",
+      "VIEW_DETAILS_TEXT":"詳細を表示",
+      "ADDED_TO_FAVORITES_SUCCESS_TEXT":"お気に入りに追加しました",
+      "ADDED_TO_FAVORITES_FAILURE_TEXT":"お気に入りに追加できませんでした",
+      "REMOVED_FAVORITES_SUCCESS_TEXT":"お気に入りから削除しました",
+      "REMOVED_FAVORITES_FAILURE_TEXT":"お気に入りから削除できませんでした",
+      "ERROR_WHILE_FETCHING_TEXT":"データの取得中にエラーが発生しました",
+      "ITEMS_PER_PAGE_TEXT":"ページごとのアイテム数",
+      "CONTACT_US": "お問い合わせ",
+      "NAME": "名前",
+      "EMAIL":"メール",
+      "YOUR_MESSAGE":"メッセージ",
+      "SUBMIT": "送信"
+    }
+  }
+  
