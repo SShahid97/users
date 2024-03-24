@@ -11,7 +11,7 @@ This project, titled User Profiles, is developed as a task assigned by Nyur Tech
 ## Getting Started
 Follow these steps to clone the repository, install dependencies, and run the application locally.
 ### Prerequisites
-- Node.js installed on your machine
+- Node.js (>=18.18.0) installed on your machine
 - Yarn package manager (optional but recommended)
 ### Cloning the Repository
 Clone the repository to your local machine using Git:
