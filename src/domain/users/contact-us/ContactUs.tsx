@@ -5,6 +5,7 @@ import {
   Box,
   Typography,
   CircularProgress,
+  Divider,
 } from "@mui/material";
 import { useContactUsMutation } from "../apis";
 import { useSnackbar } from "notistack";
@@ -66,9 +67,12 @@ const ContactUs = () => {
   return (
     <Box width={"50vw"}>
       <form autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
-        <Typography variant="h5" component="h5" color="black" mb={3}>
-          {t("DASHBOARD.CONTACT_US")}
-        </Typography>
+        <Box mb={3}>
+          <Typography variant="h5" component="h5" color="black" mb={1}>
+            {t("DASHBOARD.CONTACT_US")}
+          </Typography>
+          <Divider />
+        </Box>
         <TextField
           label={t("DASHBOARD.NAME")}
           onChange={(e) => setName(e.target.value)}
@@ -109,7 +113,11 @@ const ContactUs = () => {
           color="primary"
           type="submit"
         >
-          {isLoading ? <CircularProgress size={25} /> : `${t("DASHBOARD.SUBMIT")}`}
+          {isLoading ? (
+            <CircularProgress size={25} />
+          ) : (
+            `${t("DASHBOARD.SUBMIT")}`
+          )}
         </Button>
       </form>
     </Box>

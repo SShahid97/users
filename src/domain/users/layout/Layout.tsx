@@ -18,6 +18,7 @@ import { useCurrentPath } from "../../../hooks/useCurrentPath";
 import { paths } from "../../../paths";
 import LocaleSwitcher from "../../../common/LocaleSwitcher";
 import { useTranslation } from "react-i18next";
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -156,7 +157,8 @@ function Layout() {
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+        <DrawerHeader style={{justifyContent:'space-between'}}>
+          <Avatar sx={{marginLeft:10}}/>
           <IconButton onClick={handleDrawerOpenClose}>
             <ChevronLeftIcon />
           </IconButton>
