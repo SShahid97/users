@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { TablePagination } from "@mui/material";
 import UsersList from "../components/UsersList";
 import DashboardStats from "../components/DashboardStats";
+import { useSnackbar } from "notistack";
 
 const Users = () => {
   const defaultPageSize = 12;
@@ -13,14 +14,24 @@ const Users = () => {
   const [offset, setOffset] = useState<number>(defaultOffset);
   const [open, setOpen] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
-  const [rowsPerPage, setRowsPerPage] = useState(defaultPageSize);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(defaultPageSize);
+  const { enqueueSnackbar } = useSnackbar();
 
-  const { data: userData, isFetching } = useGetUsersQuery({
+  const { data: userData, isFetching, isError } = useGetUsersQuery({
     skip: offset,
     limit: rowsPerPage,
     search: query ? true : false,
     query
   });
+
+  // error handling
+  useEffect(()=>{
+    if(isError){
+      enqueueSnackbar("Error while fetching data", {
+        variant: "error",
+      });
+    }
+  },[isError, enqueueSnackbar])
 
   useEffect(() => {
     if (isFetching) {

@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 type SearchBoxProps = {
@@ -6,13 +6,22 @@ type SearchBoxProps = {
 };
 
 const SearchBox = ({ setQuery }: SearchBoxProps) => {
-  const [search, setSearch] = useState<string>('');
+  const [search, setSearch] = useState<string>("");
 
   return (
-    <Box width="50%" marginBottom={3}>
+    <Box
+      width="100%"
+      display={"flex"}
+      justifyContent={"space-between"}
+      alignItems={'baseline'}
+      marginBottom={3}
+    >
+      <Typography variant="h6" width={'50%'} component="h6" color="black">
+        User Profiles
+      </Typography>
       <TextField
+        style={{width:'50%'}}
         value={search}
-        fullWidth
         id="outlined-basic"
         label="Search users by name"
         variant="outlined"
@@ -20,9 +29,9 @@ const SearchBox = ({ setQuery }: SearchBoxProps) => {
         onChange={(e) => {
           setSearch(e.target.value.trim());
           // mimics debounce
-          setTimeout(()=>{
+          setTimeout(() => {
             setQuery(e.target.value.trim());
-          },700)
+          }, 700);
         }}
       />
     </Box>

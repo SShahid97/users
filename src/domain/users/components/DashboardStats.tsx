@@ -63,7 +63,7 @@ const DashboardStats = () => {
   },[getStats]);
   return (
     <StatsBox>
-        <DashboardStatsCard title="Total Males" value={totalMales || 0}  icon={Male} />
+        <DashboardStatsCard title="Total Males" value={totalMales || 0}  icon={Male}/>
         <DashboardStatsCard title="Total Females" value={100-totalMales || 0}  icon={Female} />
         <DashboardStatsCard title="Total Brown Eyed" value={totalBrownEyed || 0}  icon={RemoveRedEye} iconColor="warning" />
         <DashboardStatsCard title="Total Black Eyed" value={totalBlackEyed || 0}  icon={RemoveRedEye} />

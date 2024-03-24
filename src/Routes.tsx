@@ -11,6 +11,8 @@ const UserDetail = React.lazy(
 const FavoriteUsers = React.lazy(
   () => import("./domain/users/favorite-users/FavoriteUsers")
 );
+const PageNotFound = React.lazy(() => import("./page-not-found/PageNotFound"));
+
 interface AppRoutesProps {}
 
 const AppRoutes: React.FC<AppRoutesProps> = () => (
@@ -52,6 +54,14 @@ const AppRoutes: React.FC<AppRoutesProps> = () => (
         element={
           <Suspense fallback={<BackDropLoader open={true} />}>
             <FavoriteUsers />
+          </Suspense>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={<BackDropLoader open={true} />}>
+            <PageNotFound />
           </Suspense>
         }
       />
