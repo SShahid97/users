@@ -5,7 +5,7 @@ type CardContentBoxProps = {
 };
 const CardContentBox = ({ icon: Icon, text }: CardContentBoxProps) => {
   return (
-    <Box display="flex" alignItems="flex-start" gap={2} mb={1}>
+    <Box display="flex" alignItems="flex-start" gap={2} >
       <Icon />
       <Typography
         maxWidth={"200px"}

@@ -82,6 +82,7 @@ function UserCard({ user }: UserCardProps) {
         }
         title={`${user?.firstName} ${user?.lastName}`}
         subheader={user?.company?.title}
+        titleTypographyProps={{fontWeight:500, fontSize:18}}
       />
       <Divider style={{ width: "90%", margin: "auto" }} />
       <CardContent style={{ paddingTop: 10, paddingBottom: 0 }}>
@@ -89,7 +90,7 @@ function UserCard({ user }: UserCardProps) {
         <CardContentBox icon={Call} text={user?.phone} />
         <CardContentBox icon={Place} text={user?.address?.address} />
       </CardContent>
-      <CardActions>
+      <CardActions style={{justifyContent:'space-between'}}>
         <IconButton aria-label="view detail" onClick={handleNavigate}>
           <Tooltip TransitionComponent={Zoom} title="Click to view details">
             <Visibility />
