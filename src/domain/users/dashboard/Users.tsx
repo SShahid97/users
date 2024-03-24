@@ -6,6 +6,8 @@ import { TablePagination } from "@mui/material";
 import UsersList from "../components/UsersList";
 import DashboardStats from "../components/DashboardStats";
 import { useSnackbar } from "notistack";
+import { useTranslation } from "react-i18next";
+import Empty from "../../../common/Empty";
 
 const Users = () => {
   const defaultPageSize = 12;
@@ -16,6 +18,7 @@ const Users = () => {
   const [page, setPage] = useState<number>(0);
   const [rowsPerPage, setRowsPerPage] = useState<number>(defaultPageSize);
   const { enqueueSnackbar } = useSnackbar();
+  const {t} = useTranslation();
 
   const { data: userData, isFetching, isError } = useGetUsersQuery({
     skip: offset,
@@ -63,7 +66,12 @@ const Users = () => {
     <Box width="100%">
       <DashboardStats/>
       <SearchBox setQuery={setQuery} />
-      <UsersList userList={userData?.users ?? []} backdropOpen={open} />
+      {userData?.users && userData?.users?.length > 0 ? (
+         <UsersList userList={userData?.users ?? []} backdropOpen={open} />
+      ) : (
+        <Empty description="No results found"/>
+      )}
+     
       <Box
         width="100%"
         padding={2}
@@ -81,7 +89,7 @@ const Users = () => {
             rowsPerPage={rowsPerPage}
             rowsPerPageOptions={[12, 24, 48, 72, 100]}
             onRowsPerPageChange={handleChangeRowsPerPage}
-            labelRowsPerPage={'Items per page'}
+            labelRowsPerPage={t('DASHBOARD.ITEMS_PER_PAGE_TEXT')}
           />
       </Box>
     </Box>

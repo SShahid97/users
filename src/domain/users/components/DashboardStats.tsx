@@ -3,6 +3,7 @@ import { styled } from "@mui/material"
 import DashboardStatsCard from "./cards/DashboardStatsCard"
 import { useLazyGetStatsQuery } from "../apis"
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 
 const DashboardStats = () => {
@@ -11,7 +12,7 @@ const DashboardStats = () => {
   const [totalBrownEyed, setTotalBrownEyed] = useState<number>(0);
   const [totalBlackEyed, setTotalBlackEyed] = useState<number>(0);
   const [getStats] = useLazyGetStatsQuery();
-
+  const { t } = useTranslation();
   const StatsBox = styled("div")(({ theme }) => ({
     display: "flex",
     flexDirection: "row",
@@ -63,10 +64,10 @@ const DashboardStats = () => {
   },[getStats]);
   return (
     <StatsBox>
-        <DashboardStatsCard title="Total Males" value={totalMales || 0}  icon={Male}/>
-        <DashboardStatsCard title="Total Females" value={100-totalMales || 0}  icon={Female} />
-        <DashboardStatsCard title="Total Brown Eyed" value={totalBrownEyed || 0}  icon={RemoveRedEye} iconColor="warning" />
-        <DashboardStatsCard title="Total Black Eyed" value={totalBlackEyed || 0}  icon={RemoveRedEye} />
+        <DashboardStatsCard title={t('DASHBOARD.TOTAL_MALES_TEXT')} value={totalMales || 0}  icon={Male}/>
+        <DashboardStatsCard title={t('DASHBOARD.TOTAL_FEMALES_TEXT')} value={100-totalMales || 0}  icon={Female} />
+        <DashboardStatsCard title={t('DASHBOARD.TOTAL_BROWN_EYED')} value={totalBrownEyed || 0}  icon={RemoveRedEye} iconColor="warning" />
+        <DashboardStatsCard title={t('DASHBOARD.TOTAL_BLACK_EYED')} value={totalBlackEyed || 0}  icon={RemoveRedEye} />
     </StatsBox>
   )
 }

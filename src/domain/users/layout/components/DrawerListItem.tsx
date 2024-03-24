@@ -28,8 +28,8 @@ const DrawerListItem = ({ onClick, open, text, icon: Icon, active }: DrawerListI
         <ListItemIcon
           sx={{
             minWidth: 0,
-            mr: open ? 3 : "auto",
-            pl: open ? 0 : 3,
+            ml: open ? "auto" : 3,
+            pr: open ? 3 : 0,
             justifyContent: "center",
           }}
         >

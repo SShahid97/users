@@ -11,6 +11,9 @@ const routes = [
   {
     path: paths.userDetails,
   },
+  {
+    path: paths.contactUs,
+  },
 ];
 
 export const useCurrentPath = () => {

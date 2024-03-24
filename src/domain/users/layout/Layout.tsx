@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -11,12 +11,13 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Outlet, useNavigate } from "react-router-dom";
 import DrawerListItem from "./components/DrawerListItem";
-import { Dashboard, Favorite } from "@mui/icons-material";
+import { ContactMail, Dashboard, Favorite } from "@mui/icons-material";
 import { useCurrentPath } from "../../../hooks/useCurrentPath";
 import { paths } from "../../../paths";
+import LocaleSwitcher from "../../../common/LocaleSwitcher";
+import { useTranslation } from "react-i18next";
 
 const drawerWidth = 240;
 
@@ -91,22 +92,22 @@ const Drawer = styled(MuiDrawer, {
 
 function Layout() {
   const navigate = useNavigate();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const path = useCurrentPath();
+  const {t} = useTranslation();
 
   const getCurrentPath = () => {
-    if(path){
-      return path[0]?.pathname?.slice(1)
+    if (path) {
+      return path[0]?.pathname?.slice(1);
     }
-  }
+  };
 
-  const isActiveTab = (tab: string)=>{
-    if(path){
-      return getCurrentPath() === tab
+  const isActiveTab = (tab: string) => {
+    if (path) {
+      return getCurrentPath() === tab;
     }
-  }
-  
+  };
+
   const handleDrawerOpenClose = () => {
     setOpen((prev) => !prev);
   };
@@ -120,31 +121,44 @@ function Layout() {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpenClose}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
+          <Box
+            width={"100%"}
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"baseline"}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            User Profiles App
-          </Typography>
+            <Box
+              display={"flex"}
+              justifyContent={"flex-start"}
+              alignItems={"center"}
+            >
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpenClose}
+                edge="start"
+                sx={{
+                    marginRight: 5,
+                    ...(open && { display: "none" }),
+                  }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" noWrap component="div">
+              {t('DASHBOARD.APP_NAME')}
+              </Typography>
+            </Box>
+
+            <Box display={"flex"} alignSelf="end">
+              <LocaleSwitcher />
+            </Box>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerOpenClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+            <ChevronLeftIcon />
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -162,6 +176,13 @@ function Layout() {
             text="Favorite Users"
             icon={Favorite}
             active={isActiveTab(paths.favoriteUsers) ?? false}
+          />
+          <DrawerListItem
+            onClick={() => handleRouteNavigation(paths.contactUs)}
+            open={open}
+            text="Contact Us"
+            icon={ContactMail}
+            active={isActiveTab(paths.contactUs) ?? false}
           />
         </List>
       </Drawer>
